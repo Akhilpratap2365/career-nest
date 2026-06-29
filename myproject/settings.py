@@ -24,9 +24,12 @@ TEMPLATE_DIR=BASE_DIR/"templates"
 SECRET_KEY = 'django-insecure-uk$pabkxv+$0+&h1f@3l@ftmqas$gu(-&uu#62$ixxc_17h&el'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "career-nest.onrender.com",
+    ".onrender.com",
+]
 
 
 # Application definition
