@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--Popular job start-->
+<div class="row py-2">
+     <p class="text-center fs-3">POPULAR <b class="text-mycolor1">JOBS</b></p>
+     <div class="col-sm-10 mx-auto">
+        <div class="row py-3">
+            <!--Card STart-->
+            <div class="col-sm-4">
+                <div class="card mb-3 mx-auto shadow-lg bprder border-0 trendcard">
+  <div class="row g-0">
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">Trending at #1</p>
+        <h4 class="card-title">Work From Home</h4>
+        <p class="card-text mt-2"><a class=" btn bg-mycolor1">View More</a></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/job5.webp' %}" class="img-fluid rounded-start " alt="...">
+    </div>
+  </div>
+</div>
+            </div>
+            <!--Card End-->
+             <!--Card STart-->
+            <div class="col-sm-4">
+                <div class="card mb-3 mx-auto shadow-lg bprder border-0 trendcard">
+  <div class="row g-0">
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">Trending at #2</p>
+        <h4 class="card-title">Full Time Jobs</h4>
+        <p class="card-text mt-2"><a class=" btn bg-mycolor1">View More</a></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/job4.png' %}" class="img-fluid rounded-start " alt="...">
+    </div>
+  </div>
+</div>
+            </div>
+            <!--Card End-->
+             <!--Card STart-->
+            <div class="col-sm-4">
+                <div class="card mb-3 mx-auto shadow-lg bprder border-0 trendcard">
+  <div class="row g-0">
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">Trending at #3</p>
+        <h4 class="card-title">Job For Freshers</h4>
+        <p class="card-text mt-2"><a class=" btn bg-mycolor1">View More</a></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="{% static 'images/job5.webp' %}" class="img-fluid rounded-start " alt="...">
+    </div>
+  </div>
+</div>
+            </div>
+            <!--Card End-->
+        </div>
+     </div>
+</div>
+<!--Popular job end-->
+<!--Job listing start -->
+<div class="row py-2">
+    <p class="text-center fs-3">JOB <b class="text-mycolor1">LISTING</b></p>
+    <div class="col-sm-10 mx-auto">
+        <div class="row py-3">
+            <!--listing card start-->
+            <div class="col-sm-6">
+                <div class="card mb-3 mx-auto shadow-lg">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static  'images/company3.png' %}" class="img-fluid rounded-start listingimg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="card-title">Software Engineer : Python Developer</h6>
+        <p class="m-1"><b>AU Tech</b></p>
+        <p class="card-text m-0 listingtext"><i class="fa-solid fa-location-dot"></i> Sec-11, Noida</p>
+        <p class="card-text m-0 listingtext"><i class="fa-solid fa-briefcase"></i> Freshers</p>
+         <span class="listingtext">Software Engineer : Python Developer for Freshers, no experience required</span>
+        <div>
+            <span class="float-start"><i class=" fa-solid fa-calendar"></i> 1 days ago</span>
+        <span><a class="float-end listingbtn" href="/details/">&rarr;</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+             <!--listing card end-->
+               <!--listing card start-->
+            <div class="col-sm-6">
+                <div class="card mb-3 mx-auto shadow-lg">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static  'images/company3.png' %}" class="img-fluid rounded-start listingimg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="card-title">Software Engineer : Python Developer</h6>
+        <p class="m-1"><b>AU Tech</b></p>
+        <p class="card-text m-0 listingtext"><i class="fa-solid fa-location-dot"></i> Sec-11, Noida</p>
+        <p class="card-text m-0 listingtext"><i class="fa-solid fa-briefcase"></i> Freshers</p>
+        <span class="listingtext">Software Engineer : Python Developer for Freshers, no experience required</span>
+        <div>
+            <span class="float-start"><i class=" fa-solid fa-calendar"></i> 1 days ago</span>
+        <span><a class="float-end listingbtn" href="/details/">&rarr;</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+             <!--listing card end-->
+        </div>
+    </div>
+</div>
+<!--Job listing end -->
+<!--Top companies start-->
+
+<div class="row py-2">
+     <p class="text-center fs-3">TOP <b class="text-mycolor1">COMPANIES</b></p>
+     <div class="col-sm-10 mx-auto">
+      <div class="row py-3">
+        <!--Company card start-->
+        <div class="col-sm-4 ">
+          <div class="card mx-auto  p-2 companycard rounded-2">
+      <img src="{% static 'images/bajaj.webp' %}" class="img-fluid topimg w-50">
+      <p class="m-0 px-2 fs-4"><b>Bajaj Pvt Ltd</b></p>
+      <span class="p-2">Bajaj Provides life insurance service to everyone and good company</span><br/>
+      <p><a class="btn btn-success">View Jobs</a></p>
+     </div>
+        </div>
+        <!--Company card end-->
+         <!--Company card start-->
+        <div class="col-sm-4 ">
+          <div class="card mx-auto  p-2 companycard rounded-2">
+      <img src="{% static 'images/ic-paytm.webp' %}" class="img-fluid topimg w-50">
+      <p class="m-0 px-2 fs-4"><b>Paytm Service Pvt Ltd</b></p>
+      <span class="p-2">Digital payments and E-Commerce faciliators</span><br/>
+      <p><a class="btn btn-success">View Jobs</a></p>
+     </div>
+        </div>
+        <!--Company card end-->
+         <!--Company card start-->
+        <div class="col-sm-4 ">
+          <div class="card mx-auto  p-2 companycard rounded-2">
+      <img src="{% static 'images/zomato.webp' %}" class="img-fluid topimg w-50">
+      <p class="m-0 px-2 fs-4"><b>Zomato</b></p>
+      <span class="p-2">Online food and delivery marketplace</span><br/>
+      <p><a class="btn btn-success">View Jobs</a></p>
+     </div>
+        </div>
+        <!--Company card end-->
+      </div>
+     </div>
+</div>
+
+<!--Top companies end-->
+
+{% endblock %}

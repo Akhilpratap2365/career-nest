@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for u in user %}
+<div class="row py-2">
+    <p class="fs-3 text-center">User<b class="text-mycolor1"> Profile</b></p>
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <div class="card position-relative shadow-lg rounded-3 mt-5 mb-5 pb-3 border border-0" style="min-height: 200px;">
+            <img src="../{{u.picture}}" class="img-fluid profileimg position-absolute top-0 start-50 translate-middle">
+            <h3 class="username text-center">{{u.name}}</h3>
+            <p class="text-center m-0">{{u.email}}</p>
+            <p class="text-center">
+                                <i class="fa-brands fa-instagram ic"></i>
+                                <i class="fa-brands fa-facebook ic"></i>
+                                <i class="fa-brands fa-youtube ic"></i>
+                                <i class="fa-brands fa-twitter ic"></i>
+                                <i class="fa-brands fa-linkedin ic"></i>
+            </p>
+             <div class="row g-0 py-1 ps-5">
+                <div class="col-3 ps-3">
+                   <i class="fa-solid fa-phone"></i> Mob No.
+                </div>
+                <div class="col-9">
+                    {{u.mobile}}
+                </div>
+             </div>
+              <div class="row g-0 py-1 ps-5">
+                <div class="col-3 ps-3">
+                   <i class="fa-solid fa-file"></i> Highest Qualification
+                </div>
+                <div class="col-9">
+                   {{u.qualification}}
+                </div>
+             </div>
+              <div class="row g-0 py-1 ps-5">
+                <div class="col-3 ps-3">
+                   <i class="fa-solid fa-clock"></i> Work Experience
+                </div>
+                <div class="col-9">
+                    {{u.exp}}
+                </div>
+             </div>
+              <div class="row g-0 py-1 ps-5">
+                <div class="col-3 ps-3">
+                   <i class="fa-solid fa-money-bill-1-wave"></i> Current Salary
+                </div>
+                <div class="col-9">
+                    {{u.salary}}
+                </div>
+             </div>
+              <div class="row g-0 py-1 ps-5">
+                <div class="col-3 ps-3">
+                   <i class="fa-solid fa-building"></i> Current Company
+                </div>
+                <div class="col-9">
+                   {{u.company}}
+                </div>
+             </div>
+             <div class="text-center mt-4">
+                
+                <a class="btn bg-mycolor1"><i class="fa-solid fa-pencil text-light"></i> Edit Profile</a>
+             </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

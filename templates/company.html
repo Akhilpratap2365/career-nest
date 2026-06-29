@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <!--search bar starts-->
+        <div class="row mt-4">
+            <h3>Hiring in featured companies</h3>
+            <p class="text-center fs-3">Search via <b class="text-mycolor1">Company Type</b></p>
+            <!--start company type-->
+            <div class="col-sm-12 shadow p-3 mb-5 bg-info rounded">
+               <div class="row">
+                {% for c in cat %}
+                <!--company type card starts-->
+                <div class="col-sm-2 mt-1">
+                    <div class="card">
+                      <a href="/alljobs/?cid={{c.id}}" style="text-decoration: none;color: black;">
+                        <div class="card-body">
+                          <h6 class="card-title">{{c.name}}</h6>
+                          <p class="card-text text-secondary">Explore hiring...</p>
+                        </div></a>
+                    </div>   
+                </div>
+                <!--company type card end-->
+                {% endfor %}
+               </div>
+            </div>
+            <!--end company type-->
+
+            <!--top company start-->
+              <div class="col-sm-12">
+                <div class="row py-2">
+     <p class="text-center fs-3">TOP <b class="text-mycolor1">COMPANIES</b></p>
+     {% for c1 in mnc %}
+        <!--Company card start-->
+        <div class="col-sm-4 ">
+          <div class="card mx-auto mb-2 p-2 companycard rounded-2">
+     <center><img src="../{{c1.logo}}" class="img-fluid topimg" style="width: 60%; height: 160px;;"/>
+      </center> 
+      <p class="m-0 px-2 fs-4"><b>{{c1.name}}</b></p>
+      <span class="p-2">{{c1.detail|slice:50}}...</span><br/>
+      <p><a class="btn btn-success" href="/alljobs/?comid={{c1.id}}">View Jobs</a></p>
+     </div>
+        </div>
+        <!--Company card end-->
+        {% endfor %}
+              </div>
+              
+                <center> <button class="btn btn-outline-danger">Explore More >>></button> </center>
+              
+              </div>
+            <!--top company end-->
+
+
+            <!--sponsered company start-->
+            <div class="col-sm-12">
+                <div class="row py-2">
+     <p class="text-center fs-3">SPONSERED <b class="text-mycolor1">COMPANIES</b></p>
+     {% for s in paid %}
+        <!--Company card start-->
+        <div class="col-sm-4 ">
+          <div class="card mx-auto  p-2 companycard rounded-2">
+      <img src="../{{s.logo}}" class="img-fluid topimg" style="height: 180px;">
+      <p class="m-0 px-2 fs-4"><b>{{s.name}}</b></p>
+      <span class="p-2">{{s.detail|slice:100}}..</span>
+      <span><small><a href="{{s.url}}" style="text-decoration: none;" 
+        class="text-secondary">
+        Visit the Company website</a></small></span>
+      <p><a class="btn btn-success" href="/alljobs/?comid={{s.id}}">View Jobs</a></p>
+     </div>
+        </div>
+        <!--Company card end-->
+        {% endfor %}
+              </div>
+               <center> <button class="btn btn-outline-danger">Explore More >>></button> </center>
+              </div>
+            <!--sponsered company end-->
+
+
+            <!--all active company hiring start-->
+             <div class="col-sm-12">
+                <div class="row py-2">
+     <p class="text-center fs-3">ACTIVE <b class="text-mycolor1">COMPANIES HIRING</b></p>
+                </div>
+                <div class="row">
+
+                  {%  for a in all %}
+                    <!--active company card start-->
+                    <div class="col-sm-6">
+                        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="../{{a.logo}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{a.name}}</h5>
+        <p class="card-text"> <small>{{a.detail|slice:100}}</small>
+        </p>
+       
+      </div>
+    </div>
+    <div class="col-sm-12 ps-3 pb-3">
+         <span class="card-text"><small class="text-body-secondary">City: {{a.city}}
+         </small></span><br/>
+        <span class="badge bg-info">{{a.type}}</span>
+        <span class="badge bg-danger">{{a.department}}</span>
+        <span class="badge bg-warning"><a href="{{a.url}}" 
+          style="text-decoration: none;color: white;">
+          
+          Visit Website</a></span>
+          <a  href="/alljobs/?comid={{a.id}}" style="text-decoration:none;">View Jobs...</a>
+    </div>
+  </div>
+</div>
+                    </div>
+                    <!--active company card end-->
+                    {%  endfor %}
+                </div>
+                 <center> <button class="btn btn-outline-danger">Explore More >>></button> </center>
+             </div>
+            <!--all active company hiring end-->
+            
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

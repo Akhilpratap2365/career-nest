@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    #divimg{
+        min-height: 450px;
+        background: url("{% static 'images/happy.jpg' %}");
+        background-size: cover;   
+    }
+</style>
+<div class="row mt-3">
+<p class="text-center fs-3">Create <b class="text-mycolor1">An Account</b></p></div>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+<div class="row shadow-lg p-3 mb-5 mt-0 bg-body rounded">
+ <div class="col-sm-4" id="divimg"></div>
+ <div class="col-sm-8">
+    <!--registration form start-->
+    <div class="row p-3">   
+        <div class="col-sm-6">
+       <div class="form-floating mb-3">
+  <input type="text" class="form-control" required name="name" id="floatingname" placeholder="Rahul Soni">
+  <label for="floatingname">Name</label>
+</div>
+</div>
+<div class="col-sm-6">
+       <div class="form-floating mb-3">
+  <input type="email" class="form-control" required name="email" id="floatingemail" placeholder="Rahul Soni">
+  <label for="floatingemail">Email Id</label>
+</div>
+</div>
+<div class="col-sm-6">
+       <div class="form-floating mb-3">
+  <input type="number" class="form-control" required name="mob" id="floatingmob" placeholder="Rahul Soni">
+  <label for="floatingmob">Mobile Number</label>
+</div>
+
+</div>
+<div class="col-sm-6">
+       <div class="form-floating mb-3">
+  <input type="password" class="form-control" required name="password" id="floatingpassword" placeholder="Rahul Soni">
+  <label for="floatingpassword">Password</label>
+</div>
+
+</div>
+<div class="col-sm-6">
+   <div class="form-floating">
+  <select class="form-select mb-3" id="floatingquali" required name="qualification" aria-label="Floating label select example">
+    <option selected>Select your highest qualification</option>
+    <option>Under 10th</option>
+    <option>Under 12th</option>
+    <option>Graduation</option>
+    <option>Post Graduation</option>
+    <option>Other</option>
+  </select>
+  <label for="floatingqualit">Highest Qualification</label>
+</div>
+</div>
+<div class="col-sm-6">
+   <div class="form-floating">
+  <select class="form-select mb-3" id="floatingexp"  name="exp" aria-label="Floating label select example">
+    <option selected>Select your work expirence</option>
+    <option>Fresher</option>
+    <option>2+ Years</option>
+    <option>3+ Years</option>
+    <option>4+ Years</option>
+    <option>5+ Years</option>
+    <option>More than 6+ Years</option>
+  </select>
+  <label for="floatingexp">Work Experience</label>
+</div>
+</div>
+ <div class="col-sm-6 mt-3">
+       <div class="form-floating mb-3">
+  <input type="text" class="form-control" required name="company" id="floatingcompany" placeholder="Rahul Soni">
+  <label for="floatingcompany">Current Employer/Company Name</label>
+</div>
+</div>
+<div class="col-sm-6 mt-3">
+       <div class="form-floating mb-3">
+  <input type="file" class="form-control" name="resume" id="floatingresume" placeholder="Rahul Soni">
+  <label for="floatingresume">Upload Resume</label>
+</div>
+</div>
+<div class="col-sm-6">
+       <div class="form-floating mb-3">
+  <input type="number" class="form-control" name="salary" id="floatingsalary" placeholder="Rahul Soni">
+  <label for="floatingsalary">Current Salary (In lPA)</label>
+</div>
+</div>
+<div class="col-sm-6">
+       <div class="form-floating mb-3">
+  <input type="number" class="form-control" name="esalary" id="floatingesalary" placeholder="Rahul Soni">
+  <label for="floatingesalary">Expected Salary (In lPA)</label>
+</div>
+</div>
+
+<div class="col-sm-6 mt-3">
+       <div class="form-floating mb-3">
+  <input type="file" class="form-control" name="profile" id="floatingprofile" placeholder="Rahul Soni">
+  <label for="floatingprofile">Upload Picture</label>
+</div>
+</div>
+<div class="col-sm-2">
+    <input type="submit" value="Register Now" class="btn btn-danger">
+</div>
+<div class="col-sm-12" style="text-align: right;">
+   <span class="text-danger"> <a href="/ulogin/" style="text-decoration: none;"> Already Registered? Go to Login</span></a>
+
+</div>
+        </div>        
+    
+    <!--registration form end-->
+ </div>
+</div>
+</form>
+{% endblock %}

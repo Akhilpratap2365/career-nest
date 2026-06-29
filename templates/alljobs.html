@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12 mt-3">
+                <p class="text-center fs-3">Billions of job available <b class="text-mycolor1">are here</b></p>
+               <p class="text-center"><small class="text-secondary text-center">(Find your best suites one)</small></p> 
+            </div>
+{% for j in job %}
+                     <!--listing card start-->
+            <div class="col-sm-6">
+                <div class="card mb-3 mx-auto shadow-lg">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="../{{j.company.logo}}" class="img-fluid rounded-start listingimg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6 class="card-title"> {{j.title}}</h6>
+        <p class="m-1"><b>{{j.company}}</b></p>
+        <p class="card-text m-0 listingtext">
+          <i class="fa-solid fa-location-dot"></i> City : {{j.city}}</p>
+        <p class="card-text m-0 listingtext"><i class="fa-solid fa-briefcase">
+        </i> {{j.exp}}</p>
+         <span class="listingtext">{{j.skills|slice:80}}...</span>
+         <span class="badge bg-warning">{{j.category}}</span> 
+       <span class="text-secondary"><small>Salary :{{j.minsalary}} To {{j.maxsalary}}
+       </small>   </span>  
+        <div>
+            <span class="float-start"><i class=" fa-solid fa-calendar"></i>{{j.startdate}}</span>
+        <span><a class="float-end listingbtn" href="/details/?jid={{j.id}}">&rarr;</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+             <!--listing card end-->
+{% endfor %}
+</div>
+
+{%  endblock %}

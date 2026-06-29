@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <!--Team section start-->
+                   <div class="row team py-2">
+                    <p class="text-center fs-3"> OUR<b class="text-mycolor1"> TEAM</b></p>
+                    <div class="col-sm-10 mx-auto w-75">
+                      <div class="row py-2">
+                        <!--Team first start -->
+                        {% for i in tem %}
+                        <div class="col-sm-4">
+                          <div class="card mx-auto">
+  <img src=" ../{{i.picture}}" class="card-img-top img-fluid imgteam " alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{i.name}}</h5>
+    <p class="card-text text-center">{{i.post}}</p>
+    <p class="text-center"> <i class="fa-brands fa-instagram ic"></i>
+                                <i class="fa-brands fa-facebook ic"></i>
+                                <i class="fa-brands fa-youtube ic"></i>
+                                <i class="fa-brands fa-twitter ic"></i>
+                                <i class="fa-brands fa-linkedin ic"></i>
+                              </p>
+    
+  </div>
+</div>
+                        </div>
+                        {% endfor %}
+                        <!--Team first end-->
+                      </div>
+                    </div>
+                   </div>
+                   <!--Team section end-->
+{% endblock %}

@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+             <div class="row slider">
+              <div class="col-sm-10 mx-auto">
+                <div class="row">
+                  <div class="col-sm-7 pt-5">
+                    <div class="fs-1 text-center text-light text-uppercase mt-5 ">Welcome to CAREER <b class="text-mycolor1">NEST 
+                      <i class="fa-solid fa-graduation-cap"></i>
+                    </b></div>
+                    <div class="text-center text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, facilis quam aspernatur eos, ut beatae adipisci assumenda dolorum nemo reiciendis veritatis eius doloribus laudantium sint cupiditate, quidem nam recusandae maiores!</div>
+                  <a href="#" class="btn bg-mycolor1 text-light mx-auto d-block w-25 mt-5 rounded-pill">Register Now</a>
+                  </div>
+                  <div class="col-sm-5 Login  my-5 p-5">
+                    <span class="position-absolute top-0 translate-middle start-50 bg-mycolor1 py-2 px-3
+                     fs-4 text-light rounded-pill border border-2 border-light">Contact Us</span>
+                    <form method="post">
+                      {% csrf_token %}
+                      <input type="text" class="form-control txt" request placeholder="Name..." name="name"/>
+                      <input type="email" class="form-control txt" request placeholder="Email..." name="email"/>
+                      <input type="number" class="form-control txt" request placeholder="Mobile..." name="mob"/>
+                      <textarea class="form-control ta" required placeholder="Message" name="msg"></textarea>
+                      <input type="submit" value="save" class="form-control bg-mycolor1 btn1">
+                    </form>
+                  </div>
+                </div>
+              </div>
+             </div>
+             <!--About us start-->
+             <div class="row aboutus">
+              <p class="text-center fs-3">ABOUT <b class="text-mycolor1">US</b></p>
+              <div class="col-sm-10 mx-auto">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <img src="{% static 'images/careernest.jpg' %}" class="img-thumbnail w-100 imgabout"/>
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="p-3  aboutcontent">We are a forward-thinking job portal dedicated to bridging the gap between 
+talented job seekers and visionary employers. Whether you're a fresh graduate 
+exploring your first opportunity or an experienced professional seeking the 
+next big move, our platform is designed to support every step of your career 
+journey. 
+
+</p>
+ <p class="p-3 aboutcontent"> At CAREER NEST, we go beyond traditional job listings. We offer 
+personalized job recommendations, industry insights, career guidance, and 
+employer branding tools that empower both applicants and recruiters. Our 
+smart search and filter systems ensure faster, better, and more relevant 
+matches—saving time and unlocking opportunities.
+
+</p>
+<a class="btn bg-mycolor1 ms-3" href="/aboutus/">Read More</a>
+                  </div>
+                </div>
+              </div>
+             </div>
+             <!--About us end-->
+             <hr/>
+             <!--service start-->
+             <div class="row py-2">
+    <p class="text-center fs-3">OUR <b class="text-mycolor1">SERVICES</b></p>
+  <div class="col-sm-10 mx-auto">
+    <div class="row py-3">
+      <!--service card start-->
+      <div class="col-sm-3">
+        <div class="card mx-auto shadow-lg border border-0 p-2">
+          <div class="row g-0 ">
+            <div class="col-2 ps-2">
+             <i class="fa-solid fa-file serviceic"></i>
+            </div>
+            <div class="col-10 ps-2">
+              <span> <b> Interview Preparation Tools</b></span> <br/>
+              <span>Get sample questions & mock tests 
+ </span>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!--service card end-->
+        <!--service card start-->
+      <div class="col-sm-3">
+        <div class="card mx-auto shadow-lg border border-0 p-2">
+          <div class="row g-0 ">
+            <div class="col-2 ps-2">
+             <i class="fa-solid fa-bars serviceic"></i>
+            </div>
+            <div class="col-10 ps-2">
+              <span> <b>Employer Dashboard</b></span> <br/>
+              <span>Post jobs & manage applications
+ </span>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!--service card end-->
+        <!--service card start-->
+      <div class="col-sm-3">
+        <div class="card mx-auto shadow-lg border border-0 p-2">
+          <div class="row g-0 ">
+            <div class="col-2 ps-2">
+             <i class="fa-solid fa-thumbs-up serviceic"></i>
+            </div>
+            <div class="col-10 ps-2">
+              <span> <b>Internship Opportunities </b></span> <br/>
+              <span>Discover internships and fresher-level 
+ </span>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!--service card end-->
+        <!--service card start-->
+      <div class="col-sm-3">
+        <div class="card mx-auto shadow-lg border border-0 p-2">
+          <div class="row g-0 ">
+            <div class="col-2 ps-2">
+             <i class="fa-solid fa-book serviceic"></i>
+            </div>
+            <div class="col-10 ps-2">
+              <span> <b> Career Guidance & Blogs </b></span> <br/>
+              <span>Resources on resume writing 
+ </span>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!--service card end-->
+    </div>
+     
+ <!--service end-->
+               <div class="row product"></div>
+                <div class="row intro"></div>
+                 <div class="row contact"></div>
+                 
+
+                 
+
+                  
+{% endblock %}

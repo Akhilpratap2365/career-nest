@@ -1,0 +1,400 @@
+{% load static %}
+<html>
+    <head>
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    </head>
+<style>
+
+    .bg-mycolor1
+    {
+        background: #E91E63;
+    }
+    .bg-mycolor2
+    {
+        background:#9C27B0;
+    }
+    .text-mycolor1
+    {
+        color: #E91E63 ;
+    }
+    .text-mycolor2
+    {
+        color:#9C27B0;
+    }
+    .ic
+    {
+        color: #f50057;
+        height:28px;
+        width:28px;
+        border: 2px solid #f50057;
+      
+        text-align:center;
+        line-height:28px;
+    }
+    .ic:hover
+    {
+        transform: translateY(-5px);
+        transition: .1s;
+        background-color:#E91E63;
+        color:white;
+
+    }
+    
+    #menu{
+    background: transparent !important;
+    
+    }
+    #menu ul li a{
+    color: white ;
+    }
+    .slider
+    {
+      min-height: 450px;
+      background: linear-gradient(45deg,rgba(0,0,0,.6),rgba(245,0,87,.3)),url("{% static 'images/jobsmain2.webp' %}");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .aboutcontent
+    {
+      font-size: 18px;
+    }
+    .im{
+      height: 150px;
+    }
+    .imgpic{
+      height: 200px;
+      transition: 2s;
+      width: 100%;
+    }
+    .imgpic:hover{
+      transform: scale(1.1);
+      transition: 2s;
+    }
+    .ufooter{
+      min-height: 250px;
+      background: black;
+    }
+    .bfooter{
+      height:50px ;
+      background: black;
+    }
+    .imgteam{
+      height: 300px;
+    }
+    .imgabout{
+      height: 450px;
+    }
+    .catic{
+      height: 60px;
+      width: 60px;
+      font-size: 30px;
+     
+      border: 1px solid black;
+      border-radius: 7px;
+      line-height: 60px;
+    }
+    .catic:hover{
+      background: red;
+      color: white;
+      transition: 2s;
+    }
+    .catimg{
+      height: 130px;
+    }
+    .popularcat{
+      border: 0px;
+      transition: 2s;
+    }
+    .popularcat:hover{
+      transform: scale(1.09);
+      transition: 2s;
+    }
+    .txt
+    {
+      height: 50px;
+      margin-bottom: 4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 2px solid white !important;
+      border-radius: 0px !important;
+    }
+    .ta
+    {
+      height: 80px;
+      margin-bottom: 4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 2px solid white !important;
+      border-radius: 0px !important;
+    }
+    
+    .btn1{
+      height: 50px !important;
+      color: white !important;
+    }
+    .login
+    {
+     background: rgba(0,0,0,.3);
+     backdrop-filter: blur(5px);
+    }
+    .trendcard:hover{
+           background: #f48fb1;
+           transition: 2s;
+    }
+    .trendcard{
+      transition: 2s;
+    }
+    .listingbtn{
+      text-decoration: none;
+      color: #f50057;
+      font-size: 25px;
+    }
+    .listingtext{
+         font-size: 13px;
+    }
+    .listingimg{
+      height: 150px;
+    }
+    .topimg
+    {
+      height:50px;
+      margin-bottom:30px;
+      margin-top:30px;
+    }
+    .companycard:hover{
+      background: white;
+      transition: 1S;
+    }
+    .companycard{
+      transition: 1s;
+     background: #f4f4f4;
+    }
+    .profileimg{
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      background: #f3f3f3;
+      border: 1px solid black;
+    }
+    .username{
+      margin-top: 85px;
+    }
+    .serviceic{
+      height: 50px;
+      width: 50px;
+      font-size: 25px;
+      line-height: 50px;
+      color:black;
+    }
+    .contactimg{
+      height: 450px;
+    }
+    
+
+    
+</style>
+<body>
+        <div class="container-fluid">
+            <!--start header-->
+            <div class="row header">
+                <div class="col-sm-1"></div>
+                 <div class="col-sm-10 py-4">
+                    <div class="row">
+                         <div class="col-sm-3">
+                            <div class="fs-2">CAREER <b class="text-mycolor1">NEST
+                              <i class="fa-solid fa-graduation-cap"></i>
+                            </b></div>
+                         </div>
+                          <div class="col-sm-2">
+                            <b>
+                                <i class="fa-solid fa-envelope ic"></i>
+                                Mail Us</b><br/>
+                            ishaaasaxena321@gmail.com
+                          </div>
+                          <div class="col-sm-2">
+                            <b>
+                                <i class="fa-solid fa-phone ic"></i>
+                                call us</b><br/>
+                            +91-5514154875
+
+                          </div>
+                           
+                            <div class="col-sm-3 pt-3">
+                                <i class="fa-brands fa-instagram ic"></i>
+                                <i class="fa-brands fa-facebook ic"></i>
+                                <i class="fa-brands fa-youtube ic"></i>
+                                <i class="fa-brands fa-twitter ic"></i>
+                                <i class="fa-brands fa-linkedin ic"></i>
+                            </div>
+                            <div class="col-sm-2">
+                              {% if request.session.email %}
+                              <img src="../{{request.session.picture}}" class="img-thumbnail rounded-circle" style="height: 40px; width: 40px;">
+                              <b>{{request.session.name}}</b>
+                              {{request.session.email}}
+                              {% else %}
+                              <img src="{% static 'images/women.jpeg' %}" class="img-thumbnail rounded-circle" style="height: 40px; width: 40px;">
+                              <b>guest@gmail.com</b>
+                              {% endif %}
+                              
+                            </div>
+                            
+                    </div>
+                 </div>
+                 
+                  <div class="col-sm-1">
+
+                  </div>
+            </div>
+            <!--end header-->
+            <!--start menu-->
+            <div class="row menu bg-mycolor1">
+                <div class="col-sm-10 mx-auto">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+  <div class="container-fluid">
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" href="/index/">
+            <i class="fa-solid fa-house"></i> 
+            Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/aboutus/">
+            <i class="fa-solid fa-eject"></i>
+            About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/services/">
+            <i class="fa-solid fa-server"></i>
+            
+            Services</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/gallery/">
+            <i class="fa-solid fa-image"></i>
+            
+            Gallery</a>
+        </li>
+         <li class="nav-item ">
+          <a class="nav-link text-light" href="/contact/">
+            <i class="fa-solid fa-address-book"></i>
+            Contact Us</a>
+        </li>
+       
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/jobs/">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search jobs</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/alljobs/">
+            <i class="fa-solid fa-globe"></i>
+            All jobs</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/company/">
+            <i class="fa-solid fa-building"></i>
+            Companies</a>
+        </li>
+        {% if request.session.email is None %}
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/register/">
+            <i class="fa-solid fa-address-card"></i>
+            Registration</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/ulogin/">
+            <i class="fa-solid fa-key"></i>
+            Login</a>
+        </li>
+      
+        
+       {% else %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </a>
+          
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item bg-mycolor1" href="/application/">Application Status</a></li>
+            <li><a class="dropdown-item bg-mycolor1" href="/profile/">My Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item bg-mycolor1" href="/logout/">Logout</a></li>
+          </ul>
+        </li>
+        {% endif %}
+         <li class="nav-item">
+          <a class="nav-link text-light" href="/admin/">
+            <i class="fa-solid fa-user"></i>
+            Admin Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+                </div>
+            </div>
+            <!--end menu-->
+            {% block content %}
+            {% endblock %}
+             
+
+                    <div class="row ufooter">
+                      <div class="col-sm-10 mx-auto">
+                        <div class="row p-4">
+                          <div class="col-sm-3 text-light ps-3">
+                            <h5>About Website</h5>
+                            <p style="font-size: 12px;">At CAREER NEST, we go beyond traditional job listings. We offer 
+personalized job recommendations, industry insights, career guidance, and 
+employer branding tools that empower both applicants and recruiters. Our 
+smart search and filter systems ensure faster, better, and more relevant 
+matches—saving time and unlocking opportunities.</p>
+                          </div>
+                          <div class="col-sm-3 text-light ps-5">
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/index/" style="text-decoration: none ; color: white;"> Home</a></p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/aboutus/" style="text-decoration: none;color: white;"> About Us</a></p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/services/" style="text-decoration: none;color: white;"> Our Services</a></p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/gallery/"style="text-decoration: none; color: white;"> Gallery</a></p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/contact/"style="text-decoration: none; color: white;"> Contact Us</a></p>
+                           
+                          </div>
+                           <div class="col-sm-3 text-light ps-5">
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/jobs/"style="text-decoration: none; color: white;"> Search Jobs</a></p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/company/"style="text-decoration: none; color: white;"> Companies</a></p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/alljobs/"style="text-decoration: none; color: white;"> All Jobs</a></p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/profile/"style="text-decoration:none ; color: white;"> My Profile</a> </p>
+                           <p><i class="fa-solid fa-arrow-right"></i><a href="/ulogin/"style="text-decoration:none ; color: white;"> Sign in</a></p>
+                           
+                          </div>
+                          <div class="col-sm-3 text-light">
+                            <h5>Get in touch</h5>
+                            <p><i class="fa-solid fa-location-dot"></i> Uttar Pradesh, India</p>
+                            <p><i class="fa-solid fa-phone"></i> +91-2563784198</p>
+                            <p><i class="fa-solid fa-phone"></i> +91-4578961236</p>
+                            <p> <i class="fa-brands fa-instagram ic"></i>
+                                <i class="fa-brands fa-facebook ic"></i>
+                                <i class="fa-brands fa-youtube ic"></i>
+                                <i class="fa-brands fa-twitter ic"></i>
+                                <i class="fa-brands fa-linkedin ic"></i>
+                              </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row bfooter text-light text-center">
+                      <span style="line-height: 50px;"><a href="/team/" style=" text-decoration: none; color: white;">Developed by ISHA SAXENA </a> &copy; <a href="https://www.techpile.in" target="_blank">Techpile Techonology</a></span>
+                     </div>
+
+        </div>
+        
+        <script type="module" src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    </body>
+</html>

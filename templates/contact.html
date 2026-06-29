@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row py-2">
+   <p class="text-center fs-3">CONTACT <b class="text-mycolor1">US</b></p>
+   <hr class="w-50 mx-auto"/>
+   <div class="col-sm-8 mx-auto">
+    <div class="row">
+        <div class="col-sm-6 Login  p-5">
+            
+                    <!--<span class="position-absolute top-0 translate-middle start-50 bg-mycolor1 py-2 px-3
+                     fs-4 text-light rounded-pill border border-2 border-light">Contact Us</span>-->
+                    <form method="post">
+                      {% csrf_token %}
+                      <input type="text" class="form-control txt" request placeholder="Name..." name="name"/>
+                      <input type="email" class="form-control txt" request placeholder="Email..." name="email"/>
+                      <input type="number" class="form-control txt" request placeholder="Mobile..." name="mob"/>
+                      <textarea class="form-control ta" required placeholder="Message" name="msg"></textarea>
+                      <input type="submit" value="save" class="form-control bg-mycolor1 btn1">
+                    </form>
+                  
+        </div>
+        <div class="col-sm-6 p-0">
+            <img src="{% static 'images/contactnew2.webp' %}" class="img-fluid w-100 contactimg">
+        </div>
+    </div>
+         <div class="row">
+            <div class="col-sm-12 p-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65152.454950086496!2d78.28686734873!3d17.428642854296424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb938306e64fe5%3A0x307f939ffcd67d89!2sMicrosoft%20India!5e0!3m2!1sen!2sin!4v1754052203962!5m2!1sen!2sin" class="w-100" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+         </div>
+   </div>
+</div>
+{% endblock %}

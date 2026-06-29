@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 mt-3">
+                <p class="text-center fs-3">My Application<b class="text-mycolor1">List</b></p>
+               <p class="text-center"><small class="text-secondary text-center">(Have a look on status of your apllication)</small></p> 
+            </div>
+{% for j in job %}
+                     <!--listing card start-->
+            <div class="col-sm-6">
+                <div class="card mb-3 mx-auto shadow-lg">
+  <div class="row g-0">
+    <div class="col-md-12">
+      <div class="card-body">
+        <h6 class="card-title"> {{j.job.title}}</h6>
+        <p class="m-1"><b>{{j.job.company}}</b></p>
+        <p class="card-text m-0 listingtext">
+          <i class="fa-solid fa-location-dot"></i> City : {{j.job.city}}</p>
+        <p class="card-text m-0 listingtext"><i class="fa-solid fa-briefcase">
+        </i> {{j.job.exp}}</p>
+         <span class="listingtext">{{j.job.skills|slice:80}}...</span>
+         <span class="badge bg-warning">{{j.job.category}}</span> 
+       <span class="text-secondary"><small>Salary :{{j.job.minsalary}} To {{j.job.maxsalary}}
+       </small>   </span>  
+        <div>
+            <span class="float-start"><i class=" fa-solid fa-calendar"></i>{{j.job.startdate}}</span>
+        <span><a class="float-end listingbtn" href="/details/?jid={{j.job.id}}">&rarr;</a></span>
+        </div>
+      </div>
+      <div class="card-footer mt-3 text-muted">
+        Applied On:<span class="badge bg-warning">{{j.date}}</span>
+        &nbsp;&nbsp;&nbsp; Is Rejected : {{j.rejected}}
+        <br/>
+        CV selected:{{j.cvselected}} &nbsp;&nbsp;&nbsp;
+        Interviewed:{{j.interviewed}} &nbsp;&nbsp;&nbsp;
+        Got Hired:{{j.hired}}
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+             <!--listing card end-->
+{% endfor %}
+</div>
+{% endblock %}
